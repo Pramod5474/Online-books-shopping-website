@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="web" href="F:\website\fontawesome\metadata.file">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Online Books Shopping</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+       section{
+            height: 620vh;
+            background-color: aliceblue;
+            width: 100%;
+        }
+        section nav{
+            width: 99%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0px 0px 30px rgb(172, 254, 7);
+            background: #0a0a0a;
+            z-index:100;
+            padding: 5px;
+        }
+
+        section nav .logo img{
+            width: 100%;
+            margin-left: 40px;
+            padding: 3px;
+        }
+        
+        .search_bar{
+            margin-left: 15%;
+        }
+        .search_bar input{
+            font-size: 20px;
+            width: 150%;
+            padding: 5px;
+        }
+        
+        .icon{
+            margin-left: 0;
+        }
+        section nav ul{
+            list-style:none;
+            margin-left:5%;
+        }
+
+        section nav li{
+            display:inline-block;
+            padding: 0 10px;
+        }
+
+        section nav li a{
+            text-decoration: none;
+            color:rgb(217, 255, 0);
+            text-transform: uppercase;
+            padding: 8px;
+        }
+
+        section nav li a:hover{
+            border:1px solid rgb(247, 247, 247);
+        }
+
+        section .container {
+            margin: 0;
+            padding: 2%;
+        }
+
+        section .home {
+            border:no-border;
+            width: calc(100%, 1px);
+            height: 30vh;
+            color: rgb(8, 2, 1);
+            font-weight: bold;
+            font-size: 150%;
+        }
+
+        .sub-cir img {
+            border-radius: 50%;
+            border: 1px solid rgb(45, 14, 157); 
+        }
+
+        .home h3{
+            color: rgb(255, 6, 6);
+            text-decoration: underline;
+            text-decoration-style: dotted;
+        }
+    
+        section .circle{
+            display: flex;
+            justify-content: space-around 10px;
+            margin-left: 7.5%;
+        }
+        section .sub-cir{
+            width: 140px;
+            height: auto;
+            border-radius: 5px;
+            padding: 15px;
+        }
+        section .sub-cir:hover{
+                box-shadow: 0 0 5px black;
+                height: fit-content;
+        }
+        section .sb-title{
+            color: gray;
+            font-size: 20px;
+        }
+
+        section .sub-cir a{
+            color: gray;
+        }
+        .my-container{
+            width: 90%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: 5%;
+            /* margin-top: -40px; */
+            box-shadow: 0 0 10px rgb(255, 9, 9);
+        }
+        .my_circle{
+            border: 1px solid;
+            width: 20%;
+            height: 400px;
+            background-color: #383943;
+            color: white;
+            padding: 15px;
+            /* margin-left: 10px; */
+        }
+    
+        
+        .tooltip{
+            padding: 9px;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .tooltip:hover{
+            box-shadow: 0 0 5px rgb(233, 252, 88);
+            height: fit-content;
+        }
+        
+        .my_circle h3{
+            font-size: 24px;
+            align-items: center;
+        }
+
+        .my_circle .tooltip a{
+            color: #fff;
+        }
+
+        .slider-frame{
+            overflow: hidden;
+            height: 429px;
+            width: 1200px;
+            margin-left: 0;
+        
+        }
+
+
+
+
+        @-webkit-keyframes slide_animation{
+            0% {left: 0px;}
+            10% {left: 0px;}
+            20% {left: 1200px;}
+            30% {left: 1200px;}
+            40% {left: 2400px;}
+            50% {left: 2400px;}
+            60% {left: 1200px;}
+            70% {left: 1200px;}
+            80% {left: 0px;}
+            90% {left: 0px;}
+            100% {left: 0px;}
+        }
+
+        .slide-images{
+            width: 3600px;
+            height: 800px;
+            margin: 0 0 0 -2400px;
+            position: relative;
+            -webkit-animation-name: slide_animation;
+            -webkit-animation-duration: 10s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-direction: alternate;
+            -webkit-animation-play-state: running;
+        }
+
+        .slide-container{
+            height: 700px;
+            width: 1200px;
+            position: relative;
+            float: left;
+            transition: 2s;
+        }
+        
+        .slide-container img{
+            height: 500px;
+            width: 100%;
+            position: sticky;
+        }
+
+        .my-main{
+            display: flex;
+         
+        }
+
+        /*authors*/
+        .authors{
+            box-shadow: 0px 0px 5px rgb(121, 193, 255);
+            width:90%;
+            height: 2.5%;
+            margin-top: 5%;
+            margin-left: 5%;
+        }
+
+        .a_name{
+            background-color: rgb(255, 242, 251);
+            padding: 20px;
+        }
+        
+        .a_name h2{
+            color:darkblue;
+            text-decoration: underline;
+
+        }
+        .main_author{
+            display: flex;
+            justify-content: space-around;
+            background-color: rgb(242, 254, 255);
+            box-shadow: 0px 0px 5px rgb(121, 193, 255);
+        }
+
+        .sub_author{
+            padding: 5px;
+        }
+
+        .sub_author h3{
+            padding: 15px;
+        }
+        .sub_author h3:hover{
+            border-bottom: 4px solid rgb(161, 28, 28);
+        }
+
+        .video1{
+            margin: 2%;
+           width: 95%;
+           background-color: rgb(253, 255, 245);
+           box-shadow:  0 0 5px #000000;
+        }
+        .vd{
+            display: flex;
+            /* justify-content: space-between; */
+            /* padding: 15px; */
+        }
+        
+        .sub_vd{
+            padding: 10px;
+        }
+
+        .sub_vd video{
+            margin-bottom: 15px;
+        }
+        .sub_vd h1{
+            margin-top: 20%;
+            font-size: 40px;
+            color: orangered;
+        }
+        .sub_vd p{
+            margin-top: 5%;
+            font-size: 30px;
+            color: rgb(12, 106, 37);
+            text-shadow: 0 0 5px rgb(255, 255, 255);
+            margin-left: 50px;
+        }
+    /* books */
+        .featured_books{
+            height: 60vh;
+            width: 100%;
+            margin-top: 3%;
+        }
+
+
+        .featured_book_img{
+            align-items: center;
+    
+        }
+
+        .featured_books h2{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .featured_books .featured_book_box{
+            width: 95%;
+            height: 50vh;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            overflow: hidden;
+            overflow-x: scroll;
+        }
+        
+        .featured_books .featured_book_box .featured_book_card{
+            width: 250px;
+            height: 300px;
+            text-align: center;
+            padding: 5px;
+            border: 2px solid #040404;
+            margin: auto 20px;
+        }
+
+        .featured_books .featured_book_box .featured_book_card:hover{
+            box-shadow:0 0 10px #ff0346;
+        }
+
+        .featured_book_img img{
+            height: 150px;
+        }
+
+
+        .featured_books .featured_book_box .featured_book_card .featured_book_tag h2{
+            margin: 12px;
+        }
+
+        .featured_books .featured_book_box .featured_book_card .featured_book_tag .writer{
+            color: #919191;
+        }
+
+        .featured_books .featured_book_box .featured_book_card .featured_book_tag .categories{
+            color: #089da1;
+            margin-top: 8px;
+        }
+
+        .featured_books .featured_book_box .featured_book_card .featured_book_tag .book_price{
+            margin-top: 8px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .featured_books .featured_book_box .featured_book_card .featured_book_tag .book_price sub{
+            font-weight: 100;
+            padding: 0 5px;
+        }
+
+        .featured_books .featured_book_box .featured_book_card .featured_book_tag .f_btn{
+            padding: 8px 20px;
+            border: 2px solid #089da1;
+            text-decoration: none;
+            color: #0a0a0a;
+        } 
+        
+        .featured_books .featured_book_box .featured_book_card .featured_book_tag .f_btn:hover{
+            background-color: #25a8bd;
+        }
+
+        /* Photos */
+        .Gcir{
+            display: flex;
+            margin-left: 5%;
+            margin-top: 10px;
+        }
+        .Gcir .sub-gcir img{
+            height: 110%;
+            width: 90%;
+        }
+        /* magzin */
+
+        .magazine-box{
+                font-family: 'Poppins', sans-serif;
+                margin-left: 40px;
+                 padding: 10px; 
+                width: 200px; height: 320px;
+                outline: none; border: 1px solid rgb(75, 64, 64);
+                text-decoration: none; 
+            }
+
+            .magazine-Flex-box{
+                margin-left: 20px;
+                background-color: rgb(218, 255, 233);
+                margin-top: 50px;
+                padding: 15px 9px;
+            }
+
+            .magazine-Flex-box .first-03{
+                display: flex;
+                box-sizing: border-box;
+                padding: 5px
+            }
+            
+            .para{
+                margin-top: 70px;
+            }
+
+            .magazine_1 h1{
+                color: #ff0346;
+                text-transform: uppercase;
+                font-size: 40px;
+            } 
+           
+            .magazine-Flex-box .first-13{
+                display: flex;
+                box-sizing: border-box;
+            }
+
+            .magazine-Flex-box  .magazine-box{
+                border-radius: 5px;
+                background: #e5f8fa;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .magazine-Flex-box  .magazine-box img{
+                height: 200px;
+                width: 170px;
+            }
+
+            .magazine-Flex-box .magazine-box p{
+                color: rgb(52, 43, 43);
+                font-size: 18px;
+                line-height: 1.8;
+            }
+
+            .magazine-Flex-box .btn{
+                margin-top: 0;
+                display: inline-block;
+                background: rgb(19, 57, 121);
+                color: #fff;
+                font-size: 17px;
+                border-radius: 5px;
+                padding: 8px 20px;
+            }
+
+            .magazine-Flex-box .btn:hover{
+                letter-spacing: 1px;
+            }
+
+            .magazine-Flex-box .btn:hover{
+                box-shadow: 0 5px 10px rgb(124, 140, 168);
+                transform: scale(1.03);
+            }
+
+            @media (max-width:768px){
+                .container{
+                    padding: 20px;
+                }
+            }
+
+            .Discount{
+                margin-top: 40px;
+            }
+                                                                       
+    /* footer */
+        .Footer{
+            background-image: linear-gradient(lightblue, hotpink);
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-top: 5%;
+            height: 10%;
+        }
+        .footer_top{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            font-size: 18px;
+            /* background-color: #cce6ff; */
+            color:white;
+            flex-wrap: wrap;
+        }
+        .call,.email,.location{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .footer_top .fa-solid{
+            font-size: 30px;
+            margin:20px;
+            background-color:rgb(27, 9, 100);
+            padding:20px;
+            border-radius: 100px;
+            color:rgb(255, 255, 255);
+        }
+
+        /***********horizontal line*****************/
+        hr{
+            width: 100%;
+            border:1px solid #5b5f63;
+            margin-top:30px;
+        }
+
+        /************Middle_Footer*******************/
+        .Middle_Footer{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            /* background-color: #cce6ff; */
+            color:#5b5f63;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+
+        .seachbox{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            width: 215px;
+            align-items: center;
+            height: 50px;
+        }
+        input[type="email"]{
+            color: black;
+            border:none;
+            outline:none;
+            padding: 4px;
+        }
+        .seachbox .fa-solid{
+            color:red;
+            font-size: 30px;
+        }
+        .Middle_Footer h3{
+            color:rgb(111, 9, 9);
+        }
+        .Middle_Footer .About .Company .Resources .Subscribe li{
+            color: aliceblue;
+        }
+  
+        li:hover{
+        color:rgb(255, 255, 255);
+        cursor: pointer;
+        }
+
+        /**************footer_bottom*******************/
+        .footer_bottom{
+            /* background-color: #cce6ff; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            flex-direction: column;
+            padding-top:20px;
+            color:#5b5f63;
+            /* margin-top: 1px; */
+        }
+        .SocialMedia{
+            margin-top: 15px;
+        }
+        .fa-brands{
+            padding:10px;
+            border:2px solid #5b5f63;
+            border-radius: 100px;
+            margin: 10px;
+            font-size: 20px;
+            color: #5b5f63;
+        }
+        .fa-brands:hover{
+            color:rgb(255, 255, 255);
+            border-color:rgb(0, 0, 0);
+        }
+        .fa-facebook-f{
+            padding:10px 13px 10px 13px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <nav>
+            <div class="logo">
+                <img src="F:\website\snapdeal.svg">
+            </div>
+            <div class="search_bar"><input class="form_control mr-sm-2" type="search" placeholder="Search for Products & Brands" aria-label="Search" id="search-bar"></div>
+            <div class="icon"><i class="fas fa-search" style="font-size:20px;color:white"></i></div>
+
+            <ul>
+                <li><a href="F:/Final%20project/login.html">Sign in <i class="fas fa-user" style="font-size: 20px; color: #fff;"></i></a></li>
+                <li><a href="F:/Final%20project/about.html">About </a></li>
+                <li><a href="#">cart <i class="fas fa-shopping-cart" style="font-size:20px;color:white"></i></a></li>
+                <li><a href="F:\Final project\contact_web.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <div class="home" style="text-align: center;">
+               <h3>BOOKS</h3>
+                    <div class="circle">
+                        <div class="sub-cir">
+                            <div><img src="F:\website\Fiction.jpg"> </div>
+                            <div class="sb-title"><a href="#NonNew Arrivals">Fiction</a></div>
+                        </div>
+                        <div class="sub-cir">
+                            <div><img src="F:\website\nonfiction.jpg"></div>
+                            <div class="sb-title"><a href="https://www.snapdeal.com/products/non-fiction-books?sort=plrty">Nonfiction</a></div>
+                        </div>
+                        <div class="sub-cir">
+                            <div><img src="F:\website\competitive.jpg"></div>
+                            <div class="sb-title"><a href="https://www.snapdeal.com/products/books-competitive-exams?sort=plrty">Competitive Exams</a></div>
+                        </div>
+                        
+                        <div class="sub-cir">
+                            <div><img src="F:\website\children.jpg"></div>
+                            <div class="sb-title"><a href="https://www.snapdeal.com/products/books-children-teen?sort=plrty">Childrens</a></div>
+                        </div>
+                        
+                        <div class="sub-cir">
+                            <div><img src="F:\website\academic.jpg"></div>
+                            <div class="sb-title"><a href="https://www.snapdeal.com/products/books-academic-professional?sort=plrty">Academics Texts</a></div>
+                        </div>
+                        
+                        <div class="sub-cir">
+                            <div><img src="F:\website\philosphy.jpg"></div>
+                            <div class="sb-title"><a href="https://www.snapdeal.com/products/books-philosophy?sort=plrty">Philosophy</a></div>
+                        </div>
+        
+                        <div class="sub-cir">
+                            <div><img src="F:\website\school.jpg"></div>
+                            <div class="sb-title"><a href="https://www.snapdeal.com/products/books-school?sort=plrty">School</a></div>
+                        </div>
+                    </div>
+
+            
+                </div>
+            </div>
+        </div>
+
+        <!--Trending books-->
+
+        <div class="my-container">
+            <div class="my-main">
+                <div class="my_circle"> <h3>Trending books</h3>
+                    <div class="tooltip"><a href=https://www.snapdeal.com/products/academic-engineering-books?sort=plrty">Engineering Books</a></div>
+
+                    <div class="tooltip"><a href="https://www.snapdeal.com/products/academic-medical-books?sort=plrty">Medical Books</a></div>
+
+                    <div class="tooltip"><a href="https://www.snapdeal.com/products/books?sort=plrty">Upcoming Books</a> </div>
+
+                    <div class="tooltip"><a href="https://www.snapdeal.com/products/business-investing-management-books?q=Price%3A250%2C242559%7C&sort=plrty">Business Books</a> </div>
+
+                    <div class="tooltip"><a href=https://www.snapdeal.com/products/books-healths-fitness?q=Price%3A250%2C242559%7C&sort=plrty>Health& Fitness Books</a></div>  
+
+                    <div class="tooltip"><a href="https://www.snapdeal.com/products/children-teen-short-stories-books?q=Price%3A249%2C40530%7C&sort=plrty">Children Short Stories</a></div>
+
+                    <div class="tooltip"><a href="https://www.snapdeal.com/products/books-fiction-literature?q=Language_s%3ABengali%5EGujarati%5EHindi%5EKannada%5EKashmiri%5EMalay%5EMalayalam%5EMarathi%5ENepali%5EPanjabi%5EPrakrit%5EPunjabi%5ESanskrit%5ETamil%5ETelugu%5EUrdu%7C&sort=plrty">Indian Languages</a></div>
+                </div>
+
+                <div class="slider-frame">
+                    <div class="slide-images">
+                        <div class="slide-container">
+                            <img src="F:\website\aa.jpg" alt="offers of books1">
+                        </div>
+        
+                        <div class="slide-container">
+                            <img src="F:\website\abc.jpeg" alt="offers of books2">
+                        </div>
+        
+                        <div class="slide-container">
+                            <img src="F:\website\ba.jpg" alt="offers of books3">
+                        </div>
+        
+                        <div class="slide-container">
+                             <img src="F:\website\ae.jpg" alt="farming land">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  
+            <!--authors-->
+
+            <div class="authors">
+                
+                    <div class="a_name" style="text-align: center;">
+                        <h2>FAMOUS AUTHORS OF ALL TIMES</h2>
+                    </div>
+                        <div class="main_author">
+                            <div class="sub_author">
+                                <a href="https://www.snapdeal.com/products/books-fiction-literature?q=Author_s%3AChetan%20Bhagat%7C&sort=plrty"><h3>Chetan Bhagat</h3></a>
+                            </div>
+
+                            <div class="sub_author">
+                                <a href="https://www.snapdeal.com/products/books?sort=plrty&q=Author_s%3AA.%20P.%20J.%20Abdul%20Kalam%7C"><h3>Dr. Abdul Kalam</h3></a>
+                            </div>
+
+                            <div class="sub_author">
+                                <a href="https://www.snapdeal.com/products/books-fiction-literature?q=Author_s%3AJeffrey%20Archer%7C&sort=plrty"><h3>Jeffrey Archer</h3>
+                                </div></a>
+
+                            <div class="sub_author">
+                                <a href="https://www.snapdeal.com/products/books-fiction-literature?q=Author_s%3AAmish%20Tripathi%7C&sort=plrty"><h3>Amis Tripathi</h3></a>
+                            </div>
+
+                            <div class="sub_author">
+                               <a href="https://www.snapdeal.com/products/books?q=Author_s%3AAgatha%20Christie%7C&sort=plrty"><h3>Agatha Christie</h3></a> 
+                            </div>
+
+                            <div class="sub_author">
+                             <a href="https://www.snapdeal.com/products/books-fiction-literature?q=Author_s%3ADan%20Brown%7C&sort=plrty"><h3>Dan Brown</h3></a>
+                            </div>
+                        
+                        </div>
+            </div>
+            
+        <!--Books-->
+
+            <div class="featured_books">
+                <h2>Fiction Books</h2>
+
+                <div class="featured_book_box">
+    
+                    <div class="featured_book_card" id="Featured">
+
+                        <div class="featured_book_img">
+                            <img src="F:\website\fiction images\1.webp">
+                        </div>
+
+                        <div class="featured_book_tag">
+                            <h3>Fiction Books</h3>
+                            <p class="writer">Harper Lee</p>
+                            <div class="categories">Good, Best  </div>
+                            <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                            <a href="#" class="f_btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="featured_book_card" id="Featured">
+                        <div class="featured_book_img">
+                            <img src="F:\website\fiction images\It-Starts-With-Us-Paperback1.jpg">
+                        </div>
+                        <div class="featured_book_tag">
+                            <h3>Fiction Books</h3>
+                            <p class="writer">Harper Lee</p>
+                            <div class="categories">Good, Best  </div>
+                            <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                            <a href="#" class="f_btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="featured_book_card" id="Featured">
+                        <div class="featured_book_img">
+                            <img src="F:\website\fiction images\22.jpg">
+                        </div>
+                        <div class="featured_book_tag">
+                            <h3>Fiction Books</h3>
+                            <p class="writer">Harper Lee</p>
+                            <div class="categories">Good, Best  </div>
+                            <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                            <a href="#" class="f_btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="featured_book_card" id="Featured">
+                        <div class="featured_book_img">
+                            <img src="F:\website\fiction images\22-Years-CSAT-General-Studies.jpg">
+                        </div>
+                        <div class="featured_book_tag">
+                            <h3>Fiction Books</h3>
+                            <p class="writer">Harper Lee</p>
+                            <div class="categories">Good, Best  </div>
+                            <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                            <a href="#" class="f_btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="featured_book_card" id="Featured">
+                        <div class="featured_book_img">
+                            <img src="F:\website\fiction images\COMPREHENSIVE-OPHTHALMOLOGY-9TH-EDITION-2023.jpg">
+                        </div>
+                        <div class="featured_book_tag">
+                            <h3>Fiction Books</h3>
+                            <p class="writer">Harper Lee</p>
+                            <div class="categories">Good, Best  </div>
+                            <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                            <a href="#" class="f_btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="featured_book_card" id="Featured">
+
+                        <div class="featured_book_img">
+                            <img src="F:\website\fiction images\Emotional-Intelligence.webp">
+                        </div>
+
+                        <div class="featured_book_tag">
+                            <h3>Fiction Books</h3>
+                            <p class="writer">Harper Lee</p>
+                            <div class="categories">Good, Best  </div>
+                            <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                            <a href="#" class="f_btn">Learn More</a>
+                        </div>
+                    </div>
+    
+                    <div class="featured_book_card" id="Featured">
+                        <div class="featured_book_img">
+                            <img src="F:\website\fiction images\Rich-Dad-Poor-Dad-Hindi.webp">
+                        </div>
+                        <div class="featured_book_tag">
+                            <h3>Fiction Books</h3>
+                            <p class="writer">Harper Lee</p>
+                            <div class="categories">Good, Best  </div>
+                            <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                            <a href="#" class="f_btn">Learn More</a>
+                        </div>
+                    </div>
+
+                    <div class="featured_book_card" id="Featured">
+                        <div class="featured_book_img">
+                            <img src="F:\website\fiction images\Ross-and-Wilson-Anatomy-and.png">
+                        </div>
+                        <div class="featured_book_tag">
+                            <h3>Fiction Books</h3>
+                            <p class="writer">Harper Lee</p>
+                            <div class="categories">Good, Best  </div>
+                            <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                            <a href="#" class="f_btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="featured_book_card" id="Featured">
+                        <div class="featured_book_img">
+                            <img src="F:\website\fiction images\selected shor stories.jpg">
+                        </div>
+                        <div class="featured_book_tag">
+                            <h3>Fiction Books</h3>
+                            <p class="writer">Harper Lee</p>
+                            <div class="categories">Good, Best  </div>
+                            <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                            <a href="#" class="f_btn">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="featured_book_card" id="Featured">
+                        <div class="featured_book_img">
+                            <img src="F:\website\fiction images\Mightier-than-the-Sword-Paperback.jpg">
+                        </div>
+                        <div class="featured_book_tag">
+                            <h3>Fiction Books</h3>
+                            <p class="writer">Harper Lee</p>
+                            <div class="categories">Good, Best  </div>
+                            <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                            <a href="#" class="f_btn">Learn More</a>
+                        </div>
+                    </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- video -->
+        
+        <div class="video1">
+            <div class="vd">
+                <div class="sub_vd">
+                <video width="800" height="500" controls>
+                <source src="F:\Final project\movie.mp4" type="video/mp4">
+                <source src="F:\Final project\movie.ogg" type="video/ogg">
+                Your browser does not support the video tag.
+                </video>
+                </div>
+
+                <div class="sub_vd">
+                    <h1 style="text-align: center;">“Reading</h1><p style="text-align: center;">is an act of civilization; <br>it’s one of the greatest acts of civilization<br>because it takes the free raw material<br>of the mind and <br>builds castles of possibilities.”</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Books Type -->
+        <div class="authors">
+            <div class="a_name" style="text-align: center;">
+                <h2>SHOP FOR MORE BOOKS</h2>
+            </div>
+                <div class="main_author">
+                    <div class="sub_author">
+                        <a href="https://www.snapdeal.com/products/books-fiction-literature?q=Author_s%3AChetan%20Bhagat%7C&sort=plrty"><h3>Hobby & Crafts Books</h3></a>
+                    </div>
+
+                    <div class="sub_author">
+                        <a href="https://www.snapdeal.com/products/books?sort=plrty&q=Author_s%3AA.%20P.%20J.%20Abdul%20Kalam%7C"><h3>Philosophy</h3></a>
+                    </div>
+
+                    <div class="sub_author">
+                        <a href="https://www.snapdeal.com/products/books-fiction-literature?q=Author_s%3AJeffrey%20Archer%7C&sort=plrty"><h3>Religion & Spirituality</h3>
+                        </div></a>
+
+                    <div class="sub_author">
+                        <a href="https://www.snapdeal.com/products/books-fiction-literature?q=Author_s%3AAmish%20Tripathi%7C&sort=plrty"><h3>Family & Relationship</h3></a>
+                    </div>
+
+                    <div class="sub_author">
+                        <a href="https://www.snapdeal.com/products/books-computers-internet?sort=plrty"><h3>Computer & Internet</h3></a>
+                    </div>
+
+                    <div class="sub_author">
+                        <a href="https://www.snapdeal.com/products/books-others?sort=plrty"><h3>Other Books</h3></a>
+                    </div>
+                </div>
+        </div>        
+
+            <!-- famous magzin -->
+
+            <div class="magazine-Flex-box">
+                
+                <div class="first-03">
+    
+                    <div class="magazine_1">
+                        <div class="para">
+                            <h1 style="text-align: center;"> FUN, <br> KNOWLEDGE & <BR> GUIDANCE</h1>
+                            <i class="far fa-arrow-alt-right fa-lg" style="color: #ff0000;"></i>
+                        </div>
+                    </div>
+
+                    <div class="magazine-box">
+                        <img src="F:\Final project\magazine2.jfif" alt="emagazine">
+                        <p>Interesting Reading Challenge Ideas for 2023 </p>
+                        <a href="F:\Final project\10 Interesting Reading Challenge Ideas for 2023 - the wordy habitat.pdf" class="btn">READ NOW</a>
+                    </div>
+    
+                    <div class="magazine-box">
+                        <img src="F:\Final project\magazine cover2.jfif" alt="emagazine">
+                        <p>Student Reading Skills for ANY BOOK</p>
+                        <a href="F:\Final project\studyreadingskills.pdf" class="btn">READ NOW</a>
+                    </div>
+    
+                    <div class="magazine-box">
+                        <img src="F:\Final project\magazine cover.jfif" alt="emagazine">
+                        <p>20 Book Activities to Try With Grades 3-5</p>
+                        <a href="F:\Final project\20 Book Activities to Try With Grades 3-5.pdf" class="btn">READ NOW</a>
+                    </div> 
+
+                    <div class="magazine-box">
+                        <img src="F:\Final project\best video.jpg" alt="emagazine">
+                        <p>Best Motivation Video</p>
+                        <a href="F:\Final project\The Power of Reading - Motivational Video.mp4" class="btn">WATCH NOW</a>
+                    </div> 
+
+                </div> 
+            </div>
+    <!-- Books -->
+        
+    <div class="featured_books">
+        <h2>NonFiction Books</h2>
+
+        <div class="featured_book_box">
+
+            <div class="featured_book_card" id="Featured">
+
+                <div class="featured_book_img">
+                    <img src="F:\Final project\Wings-Of-Fire-SDL997469457-1-b9984.jpg">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h3>NonFiction Books</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\Final project\My brilliant friend.jpg">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>NonFiction Books</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs 330<sub><del>Rs 370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\Final project\TAYLOR JENKINS.jpg">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>NonFiction Books</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs330<sub><del>Rs370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\Final project\The-Thorn-Birds-McCullough-Colleen.webp">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>NonFiction Books</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs330<sub><del>Rs370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\Final project\VIOLA DAVIS.jpg">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>NonFiction Books</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs330<sub><del>Rs370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+
+                <div class="featured_book_img">
+                    <img src="F:\website\fiction images\Emotional-Intelligence.webp">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h3>NonFiction Books</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs330<sub><del>Rs370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\website\fiction images\Rich-Dad-Poor-Dad-Hindi.webp">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>NonFiction Books</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs330<sub><del>Rs370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\website\fiction images\Ross-and-Wilson-Anatomy-and.png">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>NonFiction Books</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs330<sub><del>Rs370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\website\fiction images\selected shor stories.jpg">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>NonFiction Books</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs330<sub><del>Rs370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\Final project\INDIA-2017.jpg" >
+                </div>
+                <div class="featured_book_tag">
+                    <h3>NonFiction Books</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs330<sub><del>Rs370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+                
+        </div>
+    </div>
+
+    <!-- Discount -->
+    <div class="Discount" align="center">
+        <img src="F:\Final project\disc2.jpg" alt="Not supported for your browser" width="70%" height="8%" align="center"> 
+    </div>
+    <!-- Books -->
+
+    <div class="featured_books">
+        <h2>New Arrivals</h2>
+
+        <div class="featured_book_box">
+
+            <div class="featured_book_card" id="Featured">
+
+                <div class="featured_book_img">
+                    <img src="F:\Final project\How-to-Read-a-Person.webp">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h3>New Arrivals</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs330<sub><del>Rs370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\Final project\IAS-Mains-General-Studies-Paper.jpg">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>New Arrivals</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs330<sub><del>Rs370</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\Final project\IAS-Pre-16-Years-Solved.jpg">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>New Arrivals</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\Final project\Public-Administration.jpg">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>New Arrivals</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\Final project\ram.jpg">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>New Arrivals</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+
+                <div class="featured_book_img">
+                    <img src="F:\website\fiction images\Emotional-Intelligence.webp">
+                </div>
+
+                <div class="featured_book_tag">
+                    <h3>New Arrivals</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\website\fiction images\Rich-Dad-Poor-Dad-Hindi.webp">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>New Arrivals</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\website\fiction images\Ross-and-Wilson-Anatomy-and.png">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>New Arrivals</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\website\fiction images\selected shor stories.jpg">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>New Arrivals</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="featured_book_card" id="Featured">
+                <div class="featured_book_img">
+                    <img src="F:\website\fiction images\Mightier-than-the-Sword-Paperback.jpg">
+                </div>
+                <div class="featured_book_tag">
+                    <h3>New Arrivals</h3>
+                    <p class="writer">Harper Lee</p>
+                    <div class="categories">Good, Best  </div>
+                    <p class="book_price">Rs350<sub><del>Rs390</del></sub></p>
+                    <a href="#" class="f_btn">Learn More</a>
+                </div>
+            </div>
+                
+        </div>
+    </div>
+
+
+    <!-- Photos-->
+    <div class="GFT">
+                <div class="Gcir">
+                    <div class="sub-gcir">
+                        <img src="F:\Final project\GIFTS Fathers-Day.webp"> 
+                    </div>
+                    <div class="sub-gcir">
+                        <img src="F:\Final project\Scottish-Book-Trust-Tile.webp">
+                    </div>
+                    <div class="sub-gcir">
+                        <img src="F:\Final project\2023-06-Pride-Month.webp">
+                    </div>
+                </div>
+    </div>
+
+    <!-- Customer Review -->
+
+        
+    <!-- Footer -->
+
+    <div class="Footer">
+        <!--Top Footer-->
+        <div class="footer_top">
+            <div class="call">
+                <i class="fa-solid fa-phone"></i>
+                +91 9370323268
+            </div>
+            <div class="email">
+                <i class="fa-solid fa-envelope"></i>
+                snapdeal123@gmail.com
+            </div>
+            <div class="location">
+                <i class="fa-solid fa-location-dot"></i>
+                Mumbai maharashtra
+            </div>
+        </div>
+        
+        <hr>
+
+        <!--middle footer-->
+        <div class="Middle_Footer">
+            <div class="About">
+                <h3>About</h3>
+                <li>Our Story</li>
+                <li>Awards</li>
+                <li>Our Teams</li>
+                <li>Career</li>
+            </div>
+
+            <div class="Company">
+                <h3>Company</h3>
+                <li>Our Services</li>
+                <li>Clients</li>
+                <li>Contacts</li>
+                <li>Press</li>
+            </div>
+         
+            <div class="Resources">
+                <h3>Support</h3>
+                <li>Order Status</li>
+                <li>Shipping</li>
+                <li>Return Policy</li>
+                <li>Payment Methods</li>
+                <li>Privacy policy</li>
+            </div>
+            
+            <div class="Resources">
+                <h3>Shop</h3>
+                <li>Gift Certificate</li>
+                <li>Wholesale</li>
+                <li>Affiliates Program</li>
+                <li>Deals & Discounts</li>
+                <li>Reviews</li>
+            </div>
+
+            <div class="Subscribe">
+                <h3>Subscribe</h3>
+            
+                <div class="seachbox">
+                    <input type="email" placeholder="Email Address">
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+
+                <p>Get Digital Marketing Updates in your Mailbox</p>
+            </div>
+
+        </div>
+
+        <!--Bottom Footer-->
+        <div class="footer_bottom">
+            <div class="SocialMedia">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-linkedin-in"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+            </div>
+        </div>
+        
+
+    </div>
+    </section>
+</body>
+</html>
